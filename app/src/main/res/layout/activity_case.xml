@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="执法案例" />
+
+    <com.magus.pulltorefresh.PullToRefreshListView
+        android:id="@+id/lv_caselist"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both"
+        ptr:ptrAnimationStyle="flip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </com.magus.pulltorefresh.PullToRefreshListView>
+
+</LinearLayout>

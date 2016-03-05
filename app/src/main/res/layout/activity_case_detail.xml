@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.magus.enviroment.ep.activity.knowledge.CaseDetailActivity">
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="执法案例详情" />
+    <TextView
+        android:id="@+id/tv_detail"
+        android:text="执法案例详情"
+        android:textSize="18dp"
+        android:padding="@dimen/dimen_10dp"
+        android:autoLink="phone"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

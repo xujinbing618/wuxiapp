@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_marginBottom="300dp"
+    android:id="@+id/water_info_main"
+    android:layout_height="fill_parent">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="#88e9f6cb"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/advice"
+            android:text="空气，我们每天都呼吸着的“生命气体”，它分层覆盖在地球表面，透明且无色无味混合。"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_above="@id/advice"
+            android:id="@+id/left_part"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="水质现状"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/water_main_current"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:text="III"
+                    android:background="@drawable/water_range_bg_3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="水质标准"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/water_main_standard"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:text="IV"
+                    android:background="@drawable/water_range_bg_4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_above="@id/advice"
+            android:id="@+id/right_part"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/left_part"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/black"
+                android:text="2014/5/28 周二"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:text="10:00 发布"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/attention_top_detail_select_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/handled"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="已处理列表"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/unhandled"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="未处理列表"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+</LinearLayout> 

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.magus.enviroment.ep.activity.attention.TotalMonitoringActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fg_total_monitoring_barchart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fg_total_monitoring_linechart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    </FrameLayout>
+</LinearLayout>

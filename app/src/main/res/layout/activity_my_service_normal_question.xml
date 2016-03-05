@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        app:middle_text="@string/my_service_normal_question"
+        app:left_image="@mipmap/back"
+        android:layout_height="wrap_content" />
+
+    <com.magus.pulltorefresh.PullToRefreshListView
+        android:id="@+id/my_service_centre_question_lv"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both"
+        ptr:ptrAnimationStyle="flip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+</LinearLayout>

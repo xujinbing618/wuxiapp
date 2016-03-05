@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.magus.enviroment.ep.activity.knowledge.KnowledgeActivity">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="环保百科" />
+
+    <ExpandableListView
+        android:id="@+id/main_expandablelistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ExpandableListView>
+
+
+</LinearLayout>

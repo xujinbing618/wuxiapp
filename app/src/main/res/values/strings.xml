@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">动态监管</string>
+    <string name="exit_info">再按一次退出</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!--TAB标签-->
+    <string name="navigation_home">首页</string>
+    <string name="navigation_work">关注</string>
+    <string name="navigation_knowledge">环保知识</string>
+    <string name="navigation_me">我的</string>
+    <!--工况介绍-->
+    <string-array name="work_intro">
+        <item>作用</item>
+        <item>原理</item>
+        <item>工况异常</item>
+
+    </string-array>
+
+    <!--工况介绍_原理-->
+    <string-array name="work_theory">
+        <item>物料平衡</item>
+        <item>关联关系</item>
+        <item>逻辑关系</item>
+        <item>环保检查经验</item>
+
+    </string-array>
+
+    <!--工况介绍_工况异常-->
+    <string-array name="work_abnormal">
+        <item>物料平衡</item>
+        <item>关联关系</item>
+        <item>逻辑关系</item>
+        <item>环保检查经验</item>
+
+    </string-array>
+    <!--工作界面-->
+    <string name="work_unchecked">待处理</string>
+    <string name="work_handle">已处理</string>
+    <string name="work_checked">已检查</string>
+
+
+    <!--我的界面-->
+    <string name="my_feedback_content_hint">反馈内容</string>
+    <string name="my_feedback_contact_hint">联系方式（Email、QQ号或其他）</string>
+    <string name="my_feedback_tips">你的联系方式有助于我们沟通和解决问题，仅工作人员可见</string>
+    <string name="my_feedback_submit">提交反馈</string>
+
+    <string name="my_service_leave_message">问题留言</string>
+    <string name="my_service_normal_question">常见问题解决</string>
+    <string name="my_service_check_question_type">请选择问题类型</string>
+    <string name="my_service_use_help">使用帮助</string>
+    <string name="title_activity_test">TestAct</string>
+    <string name="title_activity_attention_abnormal_detail">AttentionAbnormalDetailActivity</string>
+    <string name="title_activity_over_content">OverContentActivity</string>
+    <string name="title_activity_knowledge">KnowledgeActivity</string>
+    <string name="title_activity_work_intro">WorkIntroActivity</string>
+    <string name="title_activity_case">CaseActivity</string>
+    <string name="title_activity_case_detail">CaseDetailActivity</string>
+    <string name="title_activity_detail_fog">DetailFogActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_alarm_total_activityu">AlarmTotalActivityu</string>
+    <string name="title_activity_total_monitoring">TotalMonitoringActivity</string>
+    <string name="title_activity_attention_over_report_item">AttentionOverReportItemActivity
+    </string>
+    <string name="title_activity_alarm_six_info">AlarmSixInfoActivity</string>
+    <string name="title_activity_my_push_message_info">MyPushMessageInfo</string>
+    <string name="title_activity_my_system_seting_about_us">MySystemSetingAboutUsActivity</string>
+
+
+</resources>

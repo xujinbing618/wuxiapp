@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/attention_detail_layout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:id="@+id/attention_detial_set"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="大唐托克托电厂"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_below="@id/attention_detial_set"
+                android:id="@+id/attention_detial_facility"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="厂1号机组"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/attention_detail_type"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColor="@color/red"
+                android:layout_alignParentRight="true"
+                android:hint="异常类型:- -"
+                android:gravity="center_vertical"
+                android:layout_marginRight="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/attention_detail_description"
+                android:textSize="12sp"
+                android:paddingLeft="20dp"
+                android:text="0000年00月00日"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="12sp"
+                android:id="@+id/attention_detail_break_time"
+                android:hint="时　　长:- -"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/attention_detail_chroma"
+                android:textSize="12sp"
+                android:paddingLeft="20dp"
+                android:hint="超标浓度:- -"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:id="@+id/attention_detail_times"
+                android:hint="超标倍数:- -"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

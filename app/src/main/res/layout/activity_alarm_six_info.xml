@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+    <!--<include layout="@layout/activity_head" />-->
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="详情" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+        <ImageView
+            android:id="@+id/alarm_six_info_message"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:src="@mipmap/message" />
+
+        <ImageView
+            android:id="@+id/alarm_six_info_call"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/phone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:weightSum="8">
+
+        <Button
+            android:id="@+id/alarm_six_info_checkAll"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@color/attention_title_item"
+            android:gravity="center"
+            android:text="全选"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="3"
+            android:background="@color/attention_title_item"
+            android:gravity="center"
+            android:text="时间"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="2"
+            android:background="@color/attention_title_item"
+            android:gravity="center"
+            android:text="异常类型"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:background="@color/attention_title_item"
+            android:gravity="center"
+            android:text="处理状态"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/alarm_six_info_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </ListView>
+
+</LinearLayout>

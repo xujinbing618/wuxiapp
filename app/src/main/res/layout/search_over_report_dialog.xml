@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_5dp">
+
+
+    <TextView
+        android:id="@+id/search_over_report_dialog_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="20dp" />
+
+    <ImageView
+        android:id="@+id/previous_month"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/search_over_report_dialog_time"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:src="@mipmap/arrow_left" />
+
+    <ImageView
+        android:id="@+id/after_month"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@id/search_over_report_dialog_time"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:src="@mipmap/arrow_right2" />
+
+    <Button
+        android:id="@+id/search_over_report_dialog_sbumit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_over_report_dialog_time"
+        android:text="确定" />
+</RelativeLayout>

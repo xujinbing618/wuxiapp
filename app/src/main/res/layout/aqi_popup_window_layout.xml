@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/attention_top_detail_select_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pop_aqi"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="AQI"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/pop_pm25"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="PM2.5"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/pop_pm10"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="PM10"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/pop_o3"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="O3"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/pop_so2"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="SO2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/pop_no2"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="NO2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/pop_co"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="CO"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+</LinearLayout> 

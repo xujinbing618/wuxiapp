@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/name"
+            android:text="大板发电厂"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/phone"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/phone"
+            android:text="机组停运"
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    
+    <TextView
+        android:text="1号机组"
+        android:id="@+id/number"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="2015年4月18日 15:00 发生脱硫停运 今天共三小时发生两次"
+            android:id="@+id/description"
+            android:maxLines="3"
+            android:layout_width="249dp"
+            android:layout_height="wrap_content" />
+        
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/message"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_marginBottom="300dp"
+    android:id="@+id/air_info_main"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/station"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="#88e9f6cb"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/advice"
+            android:text="空气，我们每天都呼吸着的“生命气体”，它分层覆盖在地球表面，透明且无色无味混合。"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_above="@id/advice"
+            android:id="@+id/left_part"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="空气质量指数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                android:id="@+id/aqi1"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:text="轻度污染"
+                android:id="@+id/aqi_level1"
+                android:background="@drawable/air_range_sq_bg_1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_above="@id/advice"
+            android:id="@+id/right_part"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/left_part"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date"
+                android:textColor="@color/black"
+                android:text="XXXX/XX/XX 周X"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/time"
+                android:textColor="@color/black"
+                android:text="XX发布"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

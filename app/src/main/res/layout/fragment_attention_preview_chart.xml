@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/chart_bg_lost"
+            android:gravity="center"
+            android:text="数据缺失"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/chart_bg_stop"
+            android:gravity="center"
+            android:text="机组停运"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/chart_bg_over"
+            android:gravity="center"
+            android:text="超标报警"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/chart_bg_stop2"
+            android:gravity="center"
+            android:text="治污设施停运"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/chart_bg_microminiature"
+            android:gravity="center"
+            android:text="超限报警"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/chart_bg_constant"
+            android:gravity="center"
+            android:text="数据恒定"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.magus.enviroment.ep.fragment.attention.ui.HistogramScaleView
+            android:id="@+id/scale"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/scale"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <com.magus.enviroment.ep.fragment.attention.ui.HistogramCharView
+                android:id="@+id/histogram"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true" />
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/previous_day"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:src="@mipmap/arrow_left" />
+
+        <ImageView
+            android:id="@+id/after_day"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:src="@mipmap/arrow_right2" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

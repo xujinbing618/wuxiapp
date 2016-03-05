@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        app:middle_text="@string/my_service_leave_message"
+        app:left_image="@mipmap/back"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:background="@drawable/board_background"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:gravity="center_vertical"
+            android:text="@string/my_service_check_question_type"
+            android:layout_width="fill_parent"
+            android:layout_height="49dp" />
+
+        <View
+            android:background="@color/me_submit_background"
+            android:layout_width="fill_parent"
+            android:layout_height="1px" />
+
+        <ListView
+            android:id="@+id/et_type_lv"
+            android:paddingLeft="50dp"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp">
+        </ListView>
+    </LinearLayout>
+
+
+    <EditText
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingBottom="@dimen/dimen_5dp"
+        android:paddingRight="@dimen/dimen_10dp"
+        android:paddingLeft="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:background="@drawable/board_background"
+        android:textSize="16sp"
+        android:id="@+id/et_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left"
+        android:hint="@string/my_feedback_content_hint"
+        android:lines="5"
+        android:scrollbars="vertical" />
+
+
+    <EditText
+        android:paddingTop="@dimen/dimen_10dp"
+        android:paddingBottom="@dimen/dimen_10dp"
+        android:paddingRight="@dimen/dimen_10dp"
+        android:paddingLeft="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:lines="1"
+        android:id="@+id/et_contact"
+        android:textSize="16sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/my_feedback_contact_hint"
+        android:background="@drawable/board_background" />
+
+    <Button
+        android:paddingTop="@dimen/dimen_10dp"
+        android:paddingBottom="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_submit"
+        android:text="@string/my_feedback_submit"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@drawable/board_submit_background" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="异常类型" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:background="@drawable/board_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/source_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:gravity="center_vertical"
+                android:text="@string/my_service_check_question_type"
+                android:textSize="16sp" />
+
+           <!-- <TextView
+                android:id="@+id/my_select_all"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dimen_5dp"
+                android:gravity="center_vertical"
+                android:text="全选"
+                android:textSize="16sp" />-->
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/me_submit_background" />
+
+        <ListView
+            android:id="@+id/alarm_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></ListView>
+
+    </LinearLayout>
+</LinearLayout>

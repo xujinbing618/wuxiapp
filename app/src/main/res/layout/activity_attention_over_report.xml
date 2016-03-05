@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        app:left_image="@mipmap/back"
+        app:middle_text="超标报告" />
+
+    <LinearLayout
+        android:id="@+id/titleOverAlarm"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/attention_title_item"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:text="设施名称"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/attention_title_item"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:text="超标污染物"
+            android:textColor="@color/black" />
+
+       <!-- <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="#999a9b"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:text="超标倍数"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="#999a9b"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:text="时长(小时)"
+            android:textColor="@color/black" />-->
+    </LinearLayout>
+
+    <com.magus.pulltorefresh.PullToRefreshListView
+        android:layout_below="@id/title"
+        android:layoutAnimation="@anim/list_view_animation"
+        android:id="@+id/over_report_list"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both"
+        ptr:ptrAnimationStyle="flip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </com.magus.pulltorefresh.PullToRefreshListView>
+</LinearLayout>

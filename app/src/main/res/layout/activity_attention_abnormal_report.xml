@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="工况异常报告" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/btn_abnormal_sourcename"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/attention_title_item"
+                android:text="企业名称"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="14dp"></TextView>
+
+            <TextView
+                android:id="@+id/btn_abnormal_typename"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/attention_title_item"
+                android:textColor="@color/black"
+                android:text="异常名称"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="14dp"></TextView>
+
+            <TextView
+                android:id="@+id/btn_abnormal_facilityname"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_height="30dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/attention_title_item"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="机组名称"
+                android:textSize="14dp"></TextView>
+
+            <TextView
+                android:id="@+id/btn_abnormal_num"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_height="30dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/attention_title_item"
+                android:text="编号"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:textSize="14dp"></TextView>
+
+            <TextView
+                android:id="@+id/btn_abnormal_time"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:background="@color/attention_title_item"
+                android:textColor="@color/black"
+                android:text="时间"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="14dp"></TextView>
+        </TableRow>
+
+
+    </TableLayout>
+    <com.magus.pulltorefresh.PullToRefreshListView
+        android:layoutAnimation="@anim/list_view_animation"
+        android:id="@+id/attention_abnormal_listview"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both"
+        ptr:ptrAnimationStyle="flip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </com.magus.pulltorefresh.PullToRefreshListView>
+</LinearLayout>

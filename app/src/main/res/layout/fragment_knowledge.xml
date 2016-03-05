@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@mipmap/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        app:middle_text="环保知识"
+        android:layout_height="wrap_content"></com.magus.enviroment.ui.CustomActionBar>
+
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/knowledge_work"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:background="@drawable/gongkuangjieshao"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:id="@+id/knowledge_knowledge"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:background="@drawable/huanbaozhishi"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp" />
+
+
+        <ImageView
+            android:id="@+id/knowledge_case"
+            android:textColor="@color/white"
+            android:background="@drawable/zhifaanli"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_height="80dp" />
+
+        <ImageView
+            android:id="@+id/knowledge_policy_file"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/zhengcewenjian"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp" />
+
+    </LinearLayout>
+</LinearLayout>

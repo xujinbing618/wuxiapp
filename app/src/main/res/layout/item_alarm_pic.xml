@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp">
+
+    <LinearLayout
+        android:id="@+id/attention_alarm_pic_layout"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp">
+
+
+        <TextView
+            android:textSize="11sp"
+            android:layout_marginRight="1dp"
+            android:id="@+id/attention_alarm_pic_layout_alarm_address"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:textSize="11sp"
+            android:layout_marginRight="1dp"
+            android:id="@+id/attention_alarm_pic_layout_alarmTypeName"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/attention_alarm_pic_layout_alarmTime"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看"
+            android:textColor="@color/gray"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:id="@+id/btn_alarm_cliled"/>
+    </LinearLayout>
+</LinearLayout>

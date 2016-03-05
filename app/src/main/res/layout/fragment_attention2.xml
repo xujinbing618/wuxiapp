@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/attention_total"
+            android:layout_weight="1"
+            android:background="@drawable/attention_top_pressed_background"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/attention_top_text_color"
+                android:text="异常总览"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/attention_detail"
+            android:layout_weight="1"
+            android:background="@drawable/attention_top_pressed_background"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/attention_top_text_color"
+                android:text="异常详情"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+            <ImageView
+                android:id="@+id/attention_detail_select"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/arrow_left"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/attention_report"
+            android:layout_weight="1"
+            android:background="@drawable/attention_top_pressed_background"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/attention_top_text_color"
+                android:text="报告"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/nestedViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

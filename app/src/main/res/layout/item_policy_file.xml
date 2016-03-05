@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/src"
+            android:layout_width="@dimen/dimen_30dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/arrow_left" />
+
+        <TextView
+            android:id="@+id/pdf_read"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:gravity="center_vertical"
+            android:text="查看"
+            android:textColor="@color/custom_blue" />
+
+        <TextView
+            android:id="@+id/pdf_download"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_toLeftOf="@id/pdf_read"
+            android:gravity="center_vertical"
+            android:text="下载"
+            android:textColor="@color/custom_blue" />
+
+        <TextView
+            android:id="@+id/pdf_name"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:layout_toLeftOf="@id/pdf_download"
+            android:layout_toRightOf="@id/src"
+            android:gravity="center_vertical"
+            android:text="火电厂大气污染物排放标准.pdf"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+</RelativeLayout>

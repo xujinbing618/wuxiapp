@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        app:middle_text="服务中心"
+        app:left_image="@mipmap/back"
+        android:layout_height="wrap_content" />
+    <com.magus.enviroment.ui.CustomItemLayout
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:id="@+id/service_leave_message"
+        android:layout_width="wrap_content"
+        app:my_left_text="问题留言"
+        android:clickable="true"
+        android:background="@drawable/me_pressed_background"
+        app:my_right_image="@mipmap/arrow_right"
+        android:layout_height="wrap_content" />
+
+    <!--<TextView-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="问题说明"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="50dp" />-->
+
+    <com.magus.enviroment.ui.CustomItemLayout
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:id="@+id/service_normal_question"
+        android:layout_width="wrap_content"
+        app:my_left_text="常见问题"
+        android:clickable="true"
+        android:background="@drawable/me_pressed_background"
+        app:my_right_image="@mipmap/arrow_right"
+        android:layout_height="wrap_content" />
+
+    <!--<TextView-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="问题说明"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="50dp" />-->
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        app:middle_text="系统设置"
+        app:left_image="@mipmap/back"
+        android:layout_height="wrap_content" />
+
+    <!--<com.magus.enviroment.ui.CustomItemLayout-->
+        <!--android:layout_marginTop="@dimen/me_margin_height"-->
+        <!--android:id="@+id/system_new_version_intro"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--app:my_left_text="新版本说明"-->
+        <!--android:clickable="true"-->
+        <!--android:background="@drawable/me_pressed_background"-->
+        <!--app:my_right_image="@mipmap/arrow_right"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <com.magus.enviroment.ui.CustomItemLayout
+        android:id="@+id/system_check_new_version"
+        android:layout_width="wrap_content"
+        app:my_left_text="检查版本更新"
+        android:clickable="true"
+        android:background="@drawable/me_pressed_background"
+        app:my_right_image="@mipmap/arrow_right"
+        android:layout_height="wrap_content" />
+
+    <com.magus.enviroment.ui.CustomItemLayout
+        android:id="@+id/system_about_us"
+        android:layout_width="wrap_content"
+        app:my_left_text="关于我们"
+        android:clickable="true"
+        android:background="@drawable/me_pressed_background"
+        app:my_right_image="@mipmap/arrow_right"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

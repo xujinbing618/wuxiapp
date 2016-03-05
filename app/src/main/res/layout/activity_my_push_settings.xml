@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="推送设置" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/my_item_height"
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:background="@drawable/me_pressed_background"
+        android:paddingLeft="@dimen/my_item_left_margin"
+        android:paddingRight="@dimen/my_item_left_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="实时推送"
+            android:textSize="@dimen/my_item_text_size" />
+
+        <com.magus.enviroment.ui.CustomSwitchButton
+            android:id="@+id/push_real_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true" />
+    </RelativeLayout>
+<!--
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="问题说明" />-->
+
+    <RelativeLayout
+        android:id="@+id/rl_clear_cache"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/my_item_height"
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:background="@drawable/me_pressed_background"
+        android:paddingLeft="@dimen/my_item_left_margin"
+        android:paddingRight="@dimen/my_item_left_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="定时推送"
+            android:textSize="@dimen/my_item_text_size" />
+
+        <com.magus.enviroment.ui.CustomSwitchButton
+            android:id="@+id/push_fixed_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true" />
+        <Spinner
+            android:id="@+id/spinner_push_fixed"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+        </Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/spinner_push_fixed"
+            android:gravity="center_vertical"
+            android:text="小时" />
+    </RelativeLayout>
+
+
+  <!--  <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="问题说明" />-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_marginTop="@dimen/me_margin_height"-->
+    <!--android:background="@drawable/me_pressed_background"-->
+    <!--android:paddingLeft="@dimen/my_item_left_margin"-->
+    <!--android:paddingRight="@dimen/my_item_left_margin"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="@dimen/my_item_height">-->
+
+    <!--<TextView-->
+    <!--android:textSize="@dimen/my_item_text_size"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="离线推送" />-->
+
+    <!--<com.magus.enviroment.ui.CustomSwitchButton-->
+    <!--android:id="@+id/push_no"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:clickable="true" />-->
+    <!--</RelativeLayout>-->
+    <!--<TextView-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:text="问题说明"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="50dp" />-->
+    <CheckBox
+        android:id="@+id/check_push_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/my_item_left_margin"
+        android:text="离线推送" />
+
+</LinearLayout>

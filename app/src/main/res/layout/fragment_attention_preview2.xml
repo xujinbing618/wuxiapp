@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/home_bg"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/chart_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="2015年4月24日异常统计"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/chart"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_selected_gray_background"
+                    android:text="图"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/diagram"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_selected_gray_background"
+                    android:text="表"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/chart_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/title_layout"></FrameLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/curve_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="2015年4月异常统计"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--<com.magus.enviroment.ui.CircleIndicator-->
+        <!--android:id="@+id/indicator"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--app:ci_width="6dp"-->
+        <!--app:ci_height="6dp"-->
+        <!--app:ci_animator="@animator/indicator_no_animator"-->
+        <!--app:ci_drawable="@drawable/white_radius"-->
+        <!--app:ci_drawable_unselected="@drawable/black_radius"-->
+        <!--android:layout_height="10dp" />-->
+    </LinearLayout>
+
+
+</LinearLayout>

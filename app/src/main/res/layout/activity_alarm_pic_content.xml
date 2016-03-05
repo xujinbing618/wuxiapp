@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="截图报警" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/alarm_pic_alarm_desc"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <FrameLayout
+        android:id="@+id/alarm_pic_alarm_imagef"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </FrameLayout>
+</LinearLayout>

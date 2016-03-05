@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="用户信息" />
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/me_margin_height"
+        android:background="@drawable/board_submit_background_white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.magus.enviroment.ui.CustomItemLayout
+            android:id="@+id/my_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/me_pressed_background"
+            android:clickable="true"
+            app:my_left_text="用户名" />
+
+        <com.magus.enviroment.ui.CustomItemLayout
+            android:id="@+id/my_real_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/me_pressed_background"
+            android:clickable="true"
+            app:my_left_text="姓名" />
+
+        <com.magus.enviroment.ui.CustomItemLayout
+            android:id="@+id/my_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/me_pressed_background"
+            android:clickable="true"
+            app:my_left_text="简介" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/board_submit_background_white"
+            android:onClick="logout"
+            android:text="退出账号" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="单位列表:" />
+
+            <Spinner
+                android:id="@+id/dialog_name_spinne"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <!-- <TextView
+             android:layout_width="fill_parent"
+             android:layout_height="1dp"
+             android:background="#FFFFFF" />
+
+         <TextView
+             android:layout_width="fill_parent"
+             android:layout_height="1dp"
+             android:background="#d7d7d7" />-->
+
+
+        <LinearLayout
+            android:id="@+id/dialog_source"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/attention_detail_source_tx"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="污染源:" />
+
+            <Spinner
+                android:id="@+id/dialog_source_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">s
+
+            <TextView
+                android:id="@+id/dialog_start_time_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="开始时间:" />
+
+            <EditText
+                android:id="@+id/dialog_start_time"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">s
+
+            <TextView
+                android:id="@+id/dialog_stop_time_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="结束时间:" />
+
+            <EditText
+                android:id="@+id/dialog_stop_time"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dialog_submit_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="确定" />
+    </LinearLayout>
+</ScrollView>

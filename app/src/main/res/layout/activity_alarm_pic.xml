@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="自定义报警" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/attention_title_item"
+                android:text="区域"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp"></TextView>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/attention_title_item"
+                android:text="异常类型"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp"></TextView>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:background="@color/attention_title_item"
+                android:text="发生时间"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="1dp"
+                android:textColor="@color/white"
+                android:textSize="14dp"></TextView>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:background="@color/attention_title_item"
+                android:text="图片"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp"></TextView>
+        </TableRow>
+    </TableLayout>
+    <com.magus.pulltorefresh.PullToRefreshListView
+        android:layout_below="@id/custom_action_bar"
+        android:layoutAnimation="@anim/list_view_animation"
+        android:id="@+id/list_alarm_pic"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both"
+        ptr:ptrAnimationStyle="flip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </com.magus.pulltorefresh.PullToRefreshListView>
+
+
+    <!--<LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/ll_fail_page"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:text="加载失败，请重新加载！"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/ll_loading_now"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正在加载请稍后..."/>
+
+    </LinearLayout>-->
+</LinearLayout>

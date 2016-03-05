@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="登入" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/board_submit_background_white"
+            android:hint="用户名"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp" />
+
+        <View
+            android:id="@+id/divider_line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#f0f0f0" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/board_submit_background_white"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/board_submit_background_white"
+            android:onClick="loginRegister"
+            android:text="登陆" />
+
+        <Button
+            android:id="@+id/configuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/board_submit_background_white"
+            android:onClick="loginRegister"
+            android:layout_marginLeft="10dp"
+            android:text="配置" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_configuration"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+
+            android:text="请输入服务器地址："/>
+
+        <EditText
+            android:id="@+id/edit_configuration"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:background="@drawable/board_submit_background_white"
+            android:hint="如：192.168.11.102:8080" />
+        <Button
+            android:id="@+id/btn_configuration"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/board_submit_background_white"
+            android:onClick="loginRegister"
+            android:text="确定" />
+    </LinearLayout>
+
+
+</LinearLayout>

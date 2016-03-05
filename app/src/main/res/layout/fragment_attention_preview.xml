@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/home_bg"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/ll_fail_page"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载失败，请重新加载！" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_loading_now"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中..." />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/chart_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="2015年4月24日异常统计"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/chart"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_selected_gray_background"
+                    android:text="图"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/diagram"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_selected_gray_background"
+                    android:text="表"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/chart_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/title_layout"></FrameLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_fail_page2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载失败，请重新加载！" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_loading_now2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中..." />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/curve_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/curve_title" />
+
+        <!--<com.magus.enviroment.ui.CircleIndicator-->
+        <!--android:id="@+id/indicator"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--app:ci_width="6dp"-->
+        <!--app:ci_height="6dp"-->
+        <!--app:ci_animator="@animator/indicator_no_animator"-->
+        <!--app:ci_drawable="@drawable/white_radius"-->
+        <!--app:ci_drawable_unselected="@drawable/black_radius"-->
+        <!--android:layout_height="10dp" />-->
+    </RelativeLayout>
+
+
+</LinearLayout>

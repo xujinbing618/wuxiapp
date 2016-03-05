@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:left_image="@mipmap/back"
+        app:middle_text="关于我们" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.8"
+        android:src="@mipmap/logo" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/dimen_10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="当前版本："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.01dp"
+        android:background="@color/work_viewpager_view"></View>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10dp">
+
+        <TextView
+            android:id="@+id/tv_service_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:text="客服电话："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_service_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_service_phone"
+            android:gravity="right"
+            android:text="工作时间：9:00-17:00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_service_phone_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="15034771131"
+            android:textColor="@color/red"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <!--<ScrollView-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/my_system_settings_about_us_txt"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:padding="10dp"-->
+    <!--android:textSize="16dip" />-->
+    <!--</ScrollView>-->
+
+
+</LinearLayout>

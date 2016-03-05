@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!-->-->
+        <!--<CheckBox-->
+        <!--android:id="@+id/dalog_six_handle_2"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="运行故障" />-->
+
+        <!--<CheckBox-->
+        <!--android:id="@+id/dalog_six_handle_3"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:text="脱硫改造" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<CheckBox-->
+        <!--android:id="@+id/dalog_six_handle_4"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="低负荷运行" />-->
+
+        <!--<CheckBox-->
+        <!--android:id="@+id/dalog_six_handle_1"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="机组停运" />-->
+        <!--</LinearLayout>-->
+        <ListView
+            android:id="@+id/dialog_six_handle_list"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"></ListView>
+
+        <EditText
+            android:id="@+id/dialog_six_handle_edit"
+            android:layout_width="365dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/board_background"
+            android:gravity="top|left"
+            android:hint="请输入备注内容(500字以内)"
+            android:lines="4"
+            android:padding="3dp"
+            android:scrollbars="vertical"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/dialog_six_handle_handle_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Spinner>
+
+        <Button
+            android:id="@+id/dialog_six_handle_handle_submit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="确定" />
+    </LinearLayout>
+</ScrollView>

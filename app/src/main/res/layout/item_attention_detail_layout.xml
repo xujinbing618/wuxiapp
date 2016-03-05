@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/attention_detail_layout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:id="@+id/attention_detial_set"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="大唐托克托电厂1号机组"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_below="@id/attention_detial_set"
+                android:id="@+id/attention_detial_facility"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="厂1号机组"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/attention_detail_type"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="机组停运"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/attention_detail_description"
+                android:textSize="12sp"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="2015年3月18日，14:00发生脱硫停运，今天共三个小时，发生2次"
+                android:layout_width="230dp"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:id="@+id/status"
+                android:text="已处理"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

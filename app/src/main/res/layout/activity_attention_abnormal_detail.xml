@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <com.magus.enviroment.ui.CustomActionBar
+            android:id="@+id/custom_action_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/attention_action_bar_background"
+            app:left_image="@mipmap/back"
+            app:middle_text="工况异常报告" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_action_bar"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:text="大唐拖电1号"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_title"
+            android:padding="10dp"
+            android:shrinkColumns="0">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="企业名称:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_source"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="包头第二热电厂" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="机组名称:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_facilityname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1号机组" />
+            </TableRow>
+
+            <TableRow android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="异常名称:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_alarmtype"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="逻辑不符" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="编　　号:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_facilityid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1号机组" />
+            </TableRow>
+
+            <TableRow android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="时　　间:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_alarmtime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="包头第二热电厂" />
+            </TableRow>
+
+            <TableRow android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="异常分析:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/txt_alarmexplain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="石灰石湿法脱硫工艺的理论脱硫效率极限是98.7%，2月4日15时至2月6日8时20分出口SO2浓度偏低，导致脱硫效率超过极限值98.7%，判定为出口SO2浓度偏低，脱硫效率失真。" />
+            </TableRow>
+
+            <TableRow android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="产生原因："
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/txt_alarmcause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="出口SO2浓度偏低，导致脱硫效率失真" />
+            </TableRow>
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tabs"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+</ScrollView>

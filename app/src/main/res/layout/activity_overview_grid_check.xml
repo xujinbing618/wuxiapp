@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.magus.enviroment.ui.CustomActionBar
+        android:id="@+id/custom_action_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/attention_action_bar_background"
+        app:left_image="@mipmap/back"
+        app:middle_text="网格考核" />
+    <Spinner
+        android:id="@+id/spinner_grid_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:padding="5dp">
+    </Spinner>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/grid_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:text="2015-09异常处理率" />
+
+        <ImageView
+            android:id="@+id/previous_day"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/grid_title"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:src="@mipmap/arrow_left" />
+
+        <ImageView
+            android:id="@+id/after_day"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignRight="@id/grid_title"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:src="@mipmap/arrow_right2" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/grid_bar_chart"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_below="@id/grid_title" />
+
+        <LinearLayout
+            android:id="@+id/barvchar_loading_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone"
+          >
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中..." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/barvchar_fail_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="加载失败，请重新加载！" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

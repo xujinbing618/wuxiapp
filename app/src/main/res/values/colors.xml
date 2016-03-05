@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="custom_blue">#0f82fe</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="gray">#666666</color>
+    <color name="tab_unselected">#909090</color>
+    <color name="tab_selected">@color/white</color>
+    <color name="tab_bar_background">#323334</color>
+    <color name="alpa">#00000000</color>
+    <color name="action_bar_background">#57a1d1</color>
+
+    <color name="home_view_page_bg_selected">#0f82fe</color>
+    <color name="home_view_page_bg_unselected">#660f82fe</color>
+
+    <color name="home_view_pager_text_color_selected">#0F82FE</color>
+    <color name="home_view_pager_text_color_unselected">#808080</color>
+
+
+    <!--HomeFragment-->
+    <color name="home_city_bg">#0a3b59</color>
+    <color name="home_button_selected">#64aad4</color>
+    <color name="home_button_unselected">#85bbdc</color>
+    <color name="home_aqi_background">#f49332</color>
+    <color name="home_index_background">#33808080</color>
+    <color name="home_circle_background">#FA7E24</color>
+
+    <color name="air_range_1">#00E400</color>
+    <color name="air_range_2">#BDCC56</color>
+    <color name="air_range_3">#FF7E00</color>
+    <color name="air_range_4">#FF0000</color>
+    <color name="air_range_5">#99004C</color>
+    <color name="air_range_6">#7E0023</color>
+
+    <!--WorkFragment-->
+    <color name="work_viewpager_view">#dedede</color>
+
+    <!--AttentionFragment-->
+    <color name="attention_top_pressed_background">#364c54</color>
+    <color name="attention_top_detail_select_background">#ee364c54</color>
+    <color name="attention_top_unpressed_background">#4e6069</color>
+    <color name="attention_top_text_unselected">#9fa9ad</color>
+    <color name="attention_top_text_selected">@color/white</color>
+    <color name="attention_action_bar_background">#308AAC</color><!--364c54-->
+    <color name="attention_report_type_background">#aa53595c</color>
+    <color name="attention_button_selected">#8ba1a9</color>
+    <color name="attention_button_unselected">#85bbdc</color>
+    <color name="attention_title_item">#21637B</color>
+
+    <color name="attention_bar_blue">#1283c6</color>
+    <color name="attention_bar_red">#d00000</color>
+    <color name="attention_bar_green">#84af4d</color>
+    <color name="attention_bar_purse">#7b59a3</color>
+    <color name="attention_bar_orange">#f49332</color>
+    <color name="attention_bar_gray">#999999</color>
+    <color name="attention_bar_green2">#4e6069</color>
+    <color name="attention_bar_yellow">#eee947</color>
+
+    <color name="rb_selected">#9942453e</color>
+    <color name="rb_unselected">#995f6755</color>
+
+    <!--MeFragment-->
+    <color name="me_pressed_background">#ececec</color>
+    <color name="me_head_icon_background">#57a1d1</color>
+    <color name="me_submit_background">#999999</color>
+    <color name="me_edit_background">#EAEAEA</color>
+
+    <color name="me_source_unpressed">#f1f2f3</color>
+
+    <color name="me_source_background">#e5e6e7</color>
+    <color name="me_message_background_gray">#e4e6e7</color>
+    <color name="me_message_background_white">@color/white</color>
+    <color name="me_message_background_green">#f1f2f3</color>
+</resources>

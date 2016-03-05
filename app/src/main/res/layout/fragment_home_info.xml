@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/home_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/info_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:background="@android:color/transparent"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:text="空气质量"
+                android:id="@+id/air"
+                android:textColor="@color/white"
+                android:background="@drawable/button_selected_blue_background"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+
+            <!--<Button-->
+                <!--android:id="@+id/water"-->
+                <!--android:text="水质质量"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:background="@drawable/button_selected_blue_background"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="25dp" />-->
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/city_manager"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/city_name"
+                android:text="城市名称"
+                android:textSize="@dimen/city_name_size"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/city_name"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/add"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <!--<TextView-->
+                <!--android:visibility="gone"-->
+                <!--android:textSize="14sp"-->
+                <!--android:layout_below="@id/city_name"-->
+                <!--android:text="青浦淀山湖"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/refresh"
+                android:src="@mipmap/refresh"
+                android:scaleType="centerInside"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

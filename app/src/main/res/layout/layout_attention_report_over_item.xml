@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_attention_over_report_layout"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:paddingBottom="10dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_attention_over_report_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="包头第二热电厂(第二机组)"
+        android:textColor="@color/black"
+        android:textSize="14dip" />
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_attention_over_report_name">
+        <TextView
+            android:id="@+id/item_attention_over_report_pollutant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:text="SO2" />
+        <TextView
+            android:id="@+id/item_attention_over_report_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:text="2014-05-01 19:00" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout">
+
+        <TextView
+            android:id="@+id/item_attention_over_report_overchroma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:text="浓度：203.3" />
+
+        <TextView
+            android:id="@+id/item_attention_over_report_overtimes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:text="倍数：0.233" />
+    </RelativeLayout>
+</RelativeLayout>

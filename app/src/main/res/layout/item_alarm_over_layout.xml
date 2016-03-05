@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp">
+
+    <LinearLayout
+        android:id="@+id/attention_alarm_over_layout"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:textSize="11sp"
+            android:layout_marginRight="1dp"
+            android:id="@+id/attention_alarm_over_layout_pollSourceName"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/attention_alarm_over_layout_alarmTime"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/attention_alarm_over_layout_source"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/attention_alarm_over_layout_value"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

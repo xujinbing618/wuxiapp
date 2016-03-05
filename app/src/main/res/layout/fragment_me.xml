@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/me_source_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:background="@color/me_head_icon_background">
+
+                <ImageView
+                    android:id="@+id/me_head_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:clickable="true"
+                    android:src="@mipmap/me_unlogin" />
+
+                <TextView
+                    android:id="@+id/me_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/me_head_icon"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:onClick="login"
+                    android:text="未登录" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/me_margin_height">
+
+                <com.magus.enviroment.ui.CustomItemLayout
+                    android:id="@+id/my_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/me_pressed_background"
+                    android:clickable="true"
+                    app:my_left_image="@mipmap/me_my_message"
+                    app:my_left_text="我的消息"
+                    app:my_right_image="@mipmap/arrow_right" />
+
+               <!-- <TextView
+                    android:id="@+id/my_message_num"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/message_num"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="9dp" />-->
+            </RelativeLayout>
+
+            <com.magus.enviroment.ui.CustomItemLayout
+                android:id="@+id/my_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/me_pressed_background"
+                android:clickable="true"
+                app:my_left_image="@mipmap/me_my_attention"
+                app:my_left_text="我的关注"
+                app:my_right_image="@mipmap/arrow_right" />
+
+            <com.magus.enviroment.ui.CustomItemLayout
+                android:id="@+id/my_push_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/me_pressed_background"
+                android:clickable="true"
+                app:my_left_image="@mipmap/me_push_settings"
+                app:my_left_text="推送设置"
+                app:my_right_image="@mipmap/arrow_right" />
+
+            <com.magus.enviroment.ui.CustomItemLayout
+                android:id="@+id/my_service_centre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/me_margin_height"
+                android:background="@drawable/me_pressed_background"
+                android:clickable="true"
+                app:my_left_image="@mipmap/me_service_center"
+                app:my_left_text="服务中心"
+                app:my_right_image="@mipmap/arrow_right" />
+
+
+            <com.magus.enviroment.ui.CustomItemLayout
+                android:id="@+id/my_system_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/me_pressed_background"
+                android:clickable="true"
+                app:my_left_image="@mipmap/me_system_settings"
+                app:my_left_text="系统设置"
+                app:my_right_image="@mipmap/arrow_right" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
