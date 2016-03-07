@@ -81,11 +81,13 @@ public class HomeInfoFragment extends BaseFragment {
         Bundle bundle = getArguments();
         if (bundle != null) {
             if (mCityList.size() > 0) {
-                cityName = mCityList.get(bundle.getInt(CITY_NAME)).getCity();
+              //  cityName = mCityList.get(bundle.getInt(CITY_NAME)).getCity();
+                cityName = "无锡市";
                 cityPinYin=mCityList.get(bundle.getInt(CITY_NAME)).getCityPinYin();
 
             }else{
-                cityName=bundle.getString(CITY_NAME);
+              //  cityName=bundle.getString(CITY_NAME);
+                cityName = "无锡市";
                 cityPinYin=bundle.getString(CITY_PINYIN);
             }
     }
@@ -103,7 +105,7 @@ public class HomeInfoFragment extends BaseFragment {
 
         mFrameLayout = (FrameLayout) mRootView.findViewById(R.id.info_content);
         mCityManager = (RelativeLayout) mRootView.findViewById(R.id.city_manager);
-        mCityManager.setOnClickListener(onclickListener);
+        //mCityManager.setOnClickListener(onclickListener);
 
         mRefreshImage = (ImageView) mRootView.findViewById(R.id.refresh);
         mRefreshImage.setOnClickListener(onclickListener);

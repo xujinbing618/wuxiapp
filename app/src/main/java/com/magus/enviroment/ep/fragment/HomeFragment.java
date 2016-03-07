@@ -45,7 +45,7 @@ public class HomeFragment extends BaseFragment {
     private ProgressDialog progressDialog;//进度条
     private int mLastItemIndex = -1;//最后一次选中的fragment index
     private int defaultPageSize = 1;//默认显示页数
-    private String locationCityName = "呼和浩特";
+    private String locationCityName = "无锡市";
     private View mRootView;
     private LinearLayout mHomeLayout;
 

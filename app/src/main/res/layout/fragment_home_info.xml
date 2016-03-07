@@ -48,7 +48,7 @@
 
             <TextView
                 android:id="@+id/city_name"
-                android:text="城市名称"
+                android:text="无锡市"
                 android:textSize="@dimen/city_name_size"
                 android:gravity="center"
                 android:layout_centerInParent="true"
@@ -56,14 +56,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp" />
 
-            <ImageView
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/city_name"
-                android:layout_centerInParent="true"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/add"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+            <!--<ImageView-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_toRightOf="@id/city_name"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@mipmap/add"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp" />-->
 
             <!--<TextView-->
                 <!--android:visibility="gone"-->

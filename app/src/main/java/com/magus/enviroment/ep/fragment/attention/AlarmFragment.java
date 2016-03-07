@@ -25,7 +25,7 @@ import com.magus.enviroment.ui.UIUtil;
 public class AlarmFragment extends BaseFragment {
     private View mRootView;
     private ImageView[] mButtons;
-    private int[] mButtonIDs = {R.id.alarm_over, R.id.alarm_six, R.id.alarm_pic, R.id.alarm_total};
+    private int[] mButtonIDs = {R.id.alarm_six, R.id.alarm_total};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,16 +53,16 @@ public class AlarmFragment extends BaseFragment {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.alarm_over:
-                    startNewActivity(AlarmOverActivity.class);
-                    break;
+//                case R.id.alarm_over:
+//                    startNewActivity(AlarmOverActivity.class);
+//                    break;
                 case R.id.alarm_six:
                     startNewActivity(AlarmSixActivity.class);
                     break;
-                case R.id.alarm_pic:
-                   // UIUtil.toast(getActivity(),"此功能未开放!");
-                    startNewActivity(AlarmPicActivity.class);
-                    break;
+//                case R.id.alarm_pic:
+//                   // UIUtil.toast(getActivity(),"此功能未开放!");
+//                    startNewActivity(AlarmPicActivity.class);
+//                    break;
                 case  R.id.alarm_total:
                     startNewActivity(AlarmTotalActivity.class);
                     break;

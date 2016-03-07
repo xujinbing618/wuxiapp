@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -33,6 +35,7 @@ import com.magus.enviroment.ep.fragment.HomeFragment;
 import com.magus.enviroment.ep.fragment.KnowledgeFragment;
 import com.magus.enviroment.ep.fragment.MeFragment;
 import com.magus.enviroment.ep.service.MessagePushService;
+import com.magus.enviroment.global.log.Log;
 import com.magus.magusutils.SharedPreferenceUtil;
 import com.magus.volley.Request;
 import com.magus.volley.Response;
@@ -55,10 +58,16 @@ public class HomeActivity extends BaseActivity {
     public static final String KNOWLEDGE = "KNOWLEDGE";
     public static final String ME = "ME";
 
+    private static final int SWIPE_MIN_DISTANCE = 120;
+    private static final int SWIPE_MAX_OFF_PATH = 250;
+    private static final int SWIPE_THRESHOLD_VELOCITY = 200;
+    private static int maxTabIndex = 3;
+
     private LayoutInflater mLayoutInflater;
     private FragmentManager mFragmentManager;
     private TabHost mTabHost;
     private View mRootView;
+    private GestureDetector gestureDetector;
 
     private HomeFragment mHomeFragment;
     private AttentionFragment mAttentionFragment;
@@ -95,6 +104,7 @@ public class HomeActivity extends BaseActivity {
         mFragmentManager = getSupportFragmentManager();
         mTabHost = (TabHost) mRootView.findViewById(android.R.id.tabhost);
         mTabHost.setup();
+        gestureDetector = new GestureDetector(new TabGestureDetector());
         sendRequest();
         /**
          * 判断服务未启动 则启动服务
@@ -237,6 +247,54 @@ public class HomeActivity extends BaseActivity {
         mTabHost.setCurrentTab(mLastTabIndex);
         mCurrentTag = mTabTags[mLastTabIndex];
     }
+    private class TabGestureDetector extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                               float velocityY) {
+
+            try {
+                if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH)
+                    return false;
+                // right to left swipe
+
+                int currentView = mTabHost.getCurrentTab();
+
+                if (e1.getX() - e2.getX() >SWIPE_MIN_DISTANCE
+                        && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY
+                        ) {
+                    android.util.Log.i("test", "right" + currentView);
+                    if (currentView<maxTabIndex) {
+                        currentView++;
+                        mTabHost.setCurrentTab(currentView);
+                    }
+                } else if (e2.getX() - e1.getX() >SWIPE_MIN_DISTANCE
+                        && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY
+                        ) {
+                    android.util.Log.i("test", "left" + currentView);
+                    if (currentView > 0) {
+                        currentView--;
+                        mTabHost.setCurrentTab(currentView);
+                    }
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (gestureDetector.onTouchEvent(event)) {
+            android.util.Log.i("test", "---------------dispatch ... ");
+            event.setAction(MotionEvent.ACTION_CANCEL);
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+
+
 
 
     @Override
@@ -385,6 +443,8 @@ public class HomeActivity extends BaseActivity {
             }
         }, this);
     }
+
+
 
 
 }

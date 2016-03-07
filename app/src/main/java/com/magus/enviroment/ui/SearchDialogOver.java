@@ -209,8 +209,14 @@ public class SearchDialogOver extends Dialog {
 
     /**
      * 请求我的关注企业
+     *
      */
     private void sendRequestSource() {
+        /**
+         * 1.目标服务器url
+         * 2.服务器响成功的回调
+         * 3.服务器响应失败的回调
+         */
 
         String url = URLConstant.HEAD_URL+URLConstant.URL_ALARM_SOURCE + "?userId=" + MyApplication.mUid;
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {

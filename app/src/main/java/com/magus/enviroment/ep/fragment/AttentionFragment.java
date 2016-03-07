@@ -38,9 +38,7 @@ public class AttentionFragment extends BaseFragment {
 
     private View mRootView;
     private ImageView[] mButtons;
-    private int[] mButtonIDs = {R.id.attention_abnormal_report,
-            R.id.attention_over_report, R.id.alarm_over, R.id.alarm_six, R.id.alarm_pic,
-            R.id.overview_statistics, R.id.overview_grid_check, R.id.overview_total_monitoring, R.id.alarm_total};
+    private int[] mButtonIDs = {R.id.alarm_six, R.id.overview_statistics,  R.id.alarm_total};
 
 
     @Override
@@ -78,51 +76,51 @@ public class AttentionFragment extends BaseFragment {
                         Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
                     }
                     break;
-                case R.id.overview_grid_check:
-                    //网格考核
-                    if ("true".equals(SharedPreferenceUtil.get("gn_0002", "false"))) {
-                        startNewActivity(OverGridCheckActivity.class);
-                    } else {
-
-                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
-                case R.id.overview_total_monitoring:
-                    //总量监控
-                    if ("true".equals(SharedPreferenceUtil.get("gn_0003", "false"))) {
-                        startNewActivity(OverMonitoringActivity.class);
-                    } else {
-
-                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
-                case R.id.attention_abnormal_report:
-                    //工况异常报告
-                    if ("true".equals(SharedPreferenceUtil.get("gn_0008", "false"))) {
-                        startNewActivity(AttentionAbnormalReportActivity.class);
-                    } else {
-
-                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
-                case R.id.attention_over_report:
-                    //超标报告
-                    if ("true".equals(SharedPreferenceUtil.get("gn_0009", "false"))) {
-                        startNewActivity(AttentionOverReportActivity.class);
-                    } else {
-
-                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
-                case R.id.alarm_over:
-                    //超标预警
-                    if ("true".equals(SharedPreferenceUtil.get("gn_0004", "false"))) {
-                        startNewActivity(AlarmOverActivity.class);
-                    } else {
-
-                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
+//                case R.id.overview_grid_check:
+//                    //网格考核
+//                    if ("true".equals(SharedPreferenceUtil.get("gn_0002", "false"))) {
+//                        startNewActivity(OverGridCheckActivity.class);
+//                    } else {
+//
+//                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
+//                    }
+//                    break;
+//                case R.id.overview_total_monitoring:
+//                    //总量监控
+//                    if ("true".equals(SharedPreferenceUtil.get("gn_0003", "false"))) {
+//                        startNewActivity(OverMonitoringActivity.class);
+//                    } else {
+//
+//                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
+//                    }
+//                    break;
+//                case R.id.attention_abnormal_report:
+//                    //工况异常报告
+//                    if ("true".equals(SharedPreferenceUtil.get("gn_0008", "false"))) {
+//                        startNewActivity(AttentionAbnormalReportActivity.class);
+//                    } else {
+//
+//                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
+//                    }
+//                    break;
+//                case R.id.attention_over_report:
+//                    //超标报告
+//                    if ("true".equals(SharedPreferenceUtil.get("gn_0009", "false"))) {
+//                        startNewActivity(AttentionOverReportActivity.class);
+//                    } else {
+//
+//                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
+//                    }
+//                    break;
+//                case R.id.alarm_over:
+//                    //超标预警
+//                    if ("true".equals(SharedPreferenceUtil.get("gn_0004", "false"))) {
+//                        startNewActivity(AlarmOverActivity.class);
+//                    } else {
+//
+//                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
+//                    }
+//                    break;
                 case R.id.alarm_six:
                     //六类报警
                     if ("true".equals(SharedPreferenceUtil.get("gn_0005", "false"))) {
@@ -142,15 +140,15 @@ public class AttentionFragment extends BaseFragment {
                     }
 
                     break;
-                case R.id.alarm_pic:
-                    //自定义报警
-                    if ("true".equals(SharedPreferenceUtil.get("gn_0006", "false"))) {
-                        startNewActivity(AlarmPicActivity.class);
-                    } else {
-
-                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
+//                case R.id.alarm_pic:
+//                    //自定义报警
+//                    if ("true".equals(SharedPreferenceUtil.get("gn_0006", "false"))) {
+//                        startNewActivity(AlarmPicActivity.class);
+//                    } else {
+//
+//                        Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
+//                    }
+//                    break;
 //                case R.id.overview_statistics:
 //                    //异常统计
 //                    if (MyApplication.isGn_0001()) {
