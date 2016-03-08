@@ -46,6 +46,14 @@ public class SearchDialogSix extends Dialog {
     private Spinner attention_detail_state_spinner;//异常处理状态下拉列表
     private Context context;
     private AlarmTypeDao alarmTypeDao;
+
+    private DatePicker datePicker;
+    //private TimePicker timePicker;
+    private Calendar cal;
+    private int year;
+    private int month;
+    private int day;
+
     EnterpriseManagerDao enterpriseManagerDao;
     List<AttentionEnterprise> listFactory = new ArrayList<>();
     List<AlarmTypeInfo> mAlarmTypeList = new ArrayList<>();
@@ -67,83 +75,119 @@ public class SearchDialogSix extends Dialog {
         enterpriseManagerDao = new EnterpriseManagerDao(context);
         alarmTypeDao = AlarmTypeDao.getInstance(context);
         startEdit = (EditText) findViewById(R.id.attention_detail_start_time);
-        startEdit.setOnClickListener(new onclick());
-        startEdit.setOnFocusChangeListener(focusChangeListener);
         startEdit.setInputType(InputType.TYPE_NULL);
+        //startEdit.setOnClickListener(new onclick());
+        //startEdit.setOnFocusChangeListener(focusChangeListener);
+        //startEdit.setInputType(InputType.TYPE_NULL);
         stopEdit = (EditText) findViewById(R.id.attention_detail_stop_time);
         stopEdit.setInputType(InputType.TYPE_NULL);
-        stopEdit.setOnClickListener(new onclick());
-        stopEdit.setOnFocusChangeListener(focusChangeListener);
+        //stopEdit.setOnClickListener(new onclick());
+        //stopEdit.setOnFocusChangeListener(focusChangeListener);
         submit = (Button) findViewById(R.id.attention_detail_submit_btn);
         attention_detail_name_spinne = (Spinner) findViewById(R.id.attention_detail_name_spinne);
         attention_detail_type_spinner = (Spinner) findViewById(R.id.attention_detail_type_spinner);
         attention_detail_state_spinner = (Spinner) findViewById(R.id.attention_detail_state_spinner);
+
+        //获取一个日历对象
+        cal = Calendar.getInstance(Locale.CHINA);
+        //获取年月日时分秒的信息
+//        year = cal.get(Calendar.YEAR);
+//        month = cal.get(Calendar.MONTH) + 1;
+//        day = cal.get(Calendar.DAY_OF_MONTH);
+
+        datePicker = (DatePicker) findViewById(R.id.datePicker1);
+
+        //datePicker初始化
+        datePicker.init(year, cal.get(Calendar.MONTH), day, new DatePicker.OnDateChangedListener() {
+
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear,
+                                      int dayOfMonth) {
+                monthOfYear = monthOfYear + 1;
+                String month = String.valueOf(monthOfYear);
+                String day = String.valueOf(dayOfMonth);
+                if (monthOfYear < 10) {
+                    month = "0" + monthOfYear;
+                }
+                if (dayOfMonth < 10) {
+                    day = "0" + day;
+                }
+                if (startEdit.isFocused()) {
+                    startEdit.setText(year + "-" + month + "-" + day);
+                }
+                if (stopEdit.isFocused()) {
+                    stopEdit.setText(year + "-" + month + "-" + day);
+                }
+
+            }
+        });
     }
 
-    class onclick implements View.OnClickListener{
+//    class onclick implements View.OnClickListener {
+//
+//        @Override
+//        public void onClick(View v) {
+//            Calendar d = Calendar.getInstance(Locale.CHINA);
+//            Date myDate = new Date();
+//            //创建一个Date实例
+//            d.setTime(myDate);
+//            //设置日历的时间，把一个新建Date实例myDate传入
+//            int year = d.get(Calendar.YEAR);
+//            int month = d.get(Calendar.MONTH);
+//            int day = d.get(Calendar.DAY_OF_MONTH);
+//            //获得日历中的 year month day
+//            DatePickerDialog dlg = new DatePickerDialog(context, DatePickerListener, year, month, day);
+//            //新建一个DatePickerDialog 构造方法中
+//            //     （设备上下文，OnDateSetListener时间设置监听器，默认年，默认月，默认日）
+//           dlg.show();
+//        }
+//    }
 
-        @Override
-        public void onClick(View v) {
-            Calendar d = Calendar.getInstance(Locale.CHINA);
-                Date myDate = new Date();
-                //创建一个Date实例
-                d.setTime(myDate);
-                //设置日历的时间，把一个新建Date实例myDate传入
-                int year = d.get(Calendar.YEAR);
-                int month = d.get(Calendar.MONTH);
-                int day = d.get(Calendar.DAY_OF_MONTH);
-                //获得日历中的 year month day
-                DatePickerDialog dlg = new DatePickerDialog(context, DatePickerListener, year, month, day);
-                //新建一个DatePickerDialog 构造方法中
-                //     （设备上下文，OnDateSetListener时间设置监听器，默认年，默认月，默认日）
-                dlg.show();
-        }
-    }
-    private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
-        @Override
-        public void onFocusChange(View v, boolean hasFocus) {
-            if (hasFocus) {
-                Calendar d = Calendar.getInstance(Locale.CHINA);
-                Date myDate = new Date();
-                //创建一个Date实例
-                d.setTime(myDate);
-                //设置日历的时间，把一个新建Date实例myDate传入
-                int year = d.get(Calendar.YEAR);
-                int month = d.get(Calendar.MONTH);
-                int day = d.get(Calendar.DAY_OF_MONTH);
-                //获得日历中的 year month day
-                DatePickerDialog dlg = new DatePickerDialog(context, DatePickerListener, year, month, day);
-                //新建一个DatePickerDialog 构造方法中
-                //     （设备上下文，OnDateSetListener时间设置监听器，默认年，默认月，默认日）
-                dlg.show();
-            }
-        }
-    };
+//    private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
+//        @Override
+//        public void onFocusChange(View v, boolean hasFocus) {
+//            if (hasFocus) {
+//                Calendar d = Calendar.getInstance(Locale.CHINA);
+//                Date myDate = new Date();
+//                //创建一个Date实例
+//                d.setTime(myDate);
+//                //设置日历的时间，把一个新建Date实例myDate传入
+//                int year = d.get(Calendar.YEAR);
+//                int month = d.get(Calendar.MONTH);
+//                int day = d.get(Calendar.DAY_OF_MONTH);
+//                //获得日历中的 year month day
+//                // DatePickerDialog dlg = new DatePickerDialog(context, DatePickerListener, year, month, day);
+//                //新建一个DatePickerDialog 构造方法中
+//                //     （设备上下文，OnDateSetListener时间设置监听器，默认年，默认月，默认日）
+//                // dlg.show();
+//            }
+//        }
+//    };
 
-    private DatePickerDialog.OnDateSetListener DatePickerListener = new DatePickerDialog.OnDateSetListener() {
-
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            monthOfYear = monthOfYear + 1;
-            String month = String.valueOf(monthOfYear);
-            String day = String.valueOf(dayOfMonth);
-            if (monthOfYear < 10) {
-                month = "0" + monthOfYear;
-            }
-            if (dayOfMonth < 10) {
-                day = "0" + day;
-            }
-            if (startEdit.hasFocus()) {
-                startEdit.setText(year + "-" + month + "-" + day);
-            }
-            if (stopEdit.hasFocus()) {
-                stopEdit.setText(year + "-" + month + "-" + day);
-            }
-
-
-        }
-    };
+//    private DatePickerDialog.OnDateSetListener DatePickerListener = new DatePickerDialog.OnDateSetListener() {
+//
+//        @Override
+//        public void onDateSet(DatePicker view, int year, int monthOfYear,
+//                              int dayOfMonth) {
+//            monthOfYear = monthOfYear + 1;
+//            String month = String.valueOf(monthOfYear);
+//            String day = String.valueOf(dayOfMonth);
+//            if (monthOfYear < 10) {
+//                month = "0" + monthOfYear;
+//            }
+//            if (dayOfMonth < 10) {
+//                day = "0" + day;
+//            }
+//            if (startEdit.hasFocus()) {
+//                startEdit.setText(year + "-" + month + "-" + day);
+//            }
+//            if (stopEdit.hasFocus()) {
+//                stopEdit.setText(year + "-" + month + "-" + day);
+//            }
+//
+//
+//        }
+//    };
 
 
     public void initData() {
