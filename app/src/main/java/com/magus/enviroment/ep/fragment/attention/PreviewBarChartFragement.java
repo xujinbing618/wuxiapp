@@ -57,10 +57,13 @@ public class PreviewBarChartFragement extends BaseFragment {
     public static final String KEY_DATE="KEY_DATE";//传递日期键值
     private boolean tableshow=false;
 
+    private TextView txtChartDate;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (mRootView == null) {
             mRootView = inflater.inflate(R.layout.fragment_preview_barchart, null);
+
         }
         ViewGroup parent = (ViewGroup) mRootView.getParent();
         if (parent != null) {
@@ -79,6 +82,7 @@ public class PreviewBarChartFragement extends BaseFragment {
             @Override
             public void onClick(View v) {
                 sendRequest(dayString);
+                txtChartDate.setText(dayString);
             }
         });
         previousDay = (ImageView) mRootView.findViewById(R.id.previous_day);
@@ -87,6 +91,11 @@ public class PreviewBarChartFragement extends BaseFragment {
         afterDay.setOnClickListener(onClickListener);
         sendRequest(dayString);
 
+        txtChartDate = (TextView) mRootView.findViewById(R.id.chart_date);
+        txtChartDate.setText(dayString);
+
+
+
     }
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -94,6 +103,8 @@ public class PreviewBarChartFragement extends BaseFragment {
             switch (v.getId()){
                 case R.id.previous_day:
                     changeDate(ID_PREVIOUS_DAY);
+
+
                     break;
                 case R.id.after_day:
                     changeDate(ID_AFTER_DAY);
@@ -101,6 +112,7 @@ public class PreviewBarChartFragement extends BaseFragment {
                 default:
                     break;
             }
+            txtChartDate.setText(dayString);
         }
     };
     //改变日期，图表会发生变化
@@ -108,6 +120,7 @@ public class PreviewBarChartFragement extends BaseFragment {
         if (id==ID_PREVIOUS_DAY) {
             dayString = DateUtil.getSpecifiedDayBefore(dayString);
             sendRequest(dayString);
+            txtChartDate.setText(dayString);
 
         }else if (id==ID_AFTER_DAY){
             dayString = DateUtil.getSpecifiedDayAfter(dayString);
@@ -117,6 +130,7 @@ public class PreviewBarChartFragement extends BaseFragment {
                 dayString = DateUtil.getCurrentDay();
             }else {
                 sendRequest(dayString);
+                txtChartDate.setText(dayString);
             }
         }
 
@@ -129,8 +143,9 @@ public class PreviewBarChartFragement extends BaseFragment {
             mActivity = getActivity();
         }
         Intent intent = new Intent(ACTION_CHANGE_DATE);
-        intent.putExtra(KEY_DATE,date);
+        intent.putExtra(KEY_DATE, date);
         mActivity.sendBroadcast(intent);
+
     }
     /**
      * 刷新数据广播
@@ -237,14 +252,14 @@ public class PreviewBarChartFragement extends BaseFragment {
                 mRateList = (List<AlarmGridPercentage>) list;
                 SharedPreferenceUtil.saveObject(SpKeyConstant.ENTERPRISE_RATE_LIST, ContextUtil.getContext(),list);
                 if (isAdded()) {
-                    initChart();
+                    //initChart();
                 }
                 BarData data = new BarData(getxVals(mRateList), getDataSet(mRateList));
                 // 设置数据
                 chart.setData(data);
                 chart.setVisibleXRange(1, 6);
                 mLoadingPage.setVisibility(View.GONE);
-                chart.setVisibility(View.VISIBLE);
+                //chart.setVisibility(View.VISIBLE);
                 // previousDay.setVisibility(View.VISIBLE);
                 // afterDay.setVisibility(View.VISIBLE);
                 tableshow = true;

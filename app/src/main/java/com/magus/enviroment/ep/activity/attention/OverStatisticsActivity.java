@@ -83,8 +83,10 @@ public class OverStatisticsActivity extends FragmentActivity {
         btnChart.setOnClickListener(onClickListener);
         btnDiagram.setOnClickListener(onClickListener);
         txtChartTitle = (TextView) findViewById(R.id.chart_title);
-        txtChartTitle.setText(DateUtil.getCurrentDay() + "异常处理率");
+        txtChartTitle.setText(DateUtil.getCurrentDay());
         txtCurveTitle = (TextView) findViewById(R.id.curve_title);
+
+
     }
 
 

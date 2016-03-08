@@ -70,7 +70,7 @@ public class AttentionFragment extends BaseFragment {
                 case R.id.overview_statistics:
                     //异常统计
                     if ("true".equals(SharedPreferenceUtil.get("gn_0001", "false"))) {
-                        //startNewActivity(OverStatisticsActivity.class);
+                        startNewActivity(OverStatisticsActivity.class);
                     } else {
 
                         Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
