@@ -24,6 +24,7 @@ import com.magus.enviroment.ep.MyApplication;
 import com.magus.enviroment.ep.adapter.HomeAirStationAdapter;
 import com.magus.enviroment.ep.base.BaseFragment;
 import com.magus.enviroment.ep.bean.AirInfoBean;
+import com.magus.enviroment.ep.bean.AirInfoBeanTest;
 import com.magus.enviroment.ep.callback.RequestCallBack;
 import com.magus.enviroment.ep.constant.URLConstant;
 import com.magus.magusutils.SharedPreferenceUtil;
@@ -56,6 +57,8 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
     private HomeAirStationAdapter mAdapter;
     private List<AirInfoBean> mAirInfoList = new ArrayList<AirInfoBean>();
 
+    private AirInfoBeanTest airInfoBeanTest = new AirInfoBeanTest();
+
     private ScrollView mScrollView;
     private LinearLayout mLinearLayout; //存放列表
 
@@ -76,7 +79,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
     private TextView txtCO;//co
     private TextView txtO3;//o3
 
-    private String mCityName="呼和浩特";//用于请求空气质量指数
+    private String mCityName="wuxi";//用于请求空气质量指数
     private String mCacheAirInfo="";
 
     private PopupWindow mPopupWindow;
@@ -224,16 +227,19 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
 //            e.printStackTrace();
 //        }
 
-            url =URLConstant.HEAD_URL+ URLConstant.URL_AIR_STATION_INFO +"?cityName="+ mCityName;
-
+            //url =URLConstant.HEAD_URL+ URLConstant.URL_AIR_STATION_INFO +"?cityName="+ mCityName;
+                url =URLConstant.TEST_URL;
         //根据给定的URL新建一个请求
         JsonObjectRequest request = new JsonObjectRequest(url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         //获得请求数据之后先保存到数据库
-                        SharedPreferenceUtil.save(mCityName, response.toString());
+                        Log.d("response",response.toString());
+                        //SharedPreferenceUtil.save(mCityName, response.toString());
+
                         parseResponse(response);
+                        Toast.makeText(mActivity, "网络请求成功", Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -249,83 +255,92 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
      * @param response
      */
     private void parseResponse(JSONObject response) {
-        AirInfoBean.parseAirInfo(response, new RequestCallBack() {
+
+        AirInfoBeanTest.test_paresAirInfo(response, new RequestCallBack() {
             @Override
-            public void onSuccess(List<?> list) {
-                mAirInfoList = (List<AirInfoBean>) list;
-                if (mLinearLayout.getChildCount() > 0) {
-                    mLinearLayout.removeAllViews();
-                }
-
-                //循环添加站点信息，原来用listview 与scrollview会有冲突
-                for (int i = 0; i < mAirInfoList.size(); i++) {
-                    LayoutInflater inflater = LayoutInflater.from(mActivity);
-                    View root = inflater.inflate(R.layout.item_air_staion_layout, null);
-                    TextView number = (TextView) root.findViewById(R.id.air_num);
-                    TextView station = (TextView) root.findViewById(R.id.air_station);
-                    TextView aqi = (TextView) root.findViewById(R.id.air_aqi);
-                    number.setText((i+1)+ "");
-                    if(!"null".equals(mAirInfoList.get(i).getPosition_name())){
-                        station.setText(mAirInfoList.get(i).getPosition_name());
-                    }else{
-                        station.setText(mAirInfoList.get(i).getArea());
-                    }
-
-                    aqi.setText(mAirInfoList.get(i).getAqi());
-                    int aqiIndex = Integer.parseInt(mAirInfoList.get(i).getAqi().trim());
-                    if (aqiIndex >=0 && aqiIndex <= 50) {
-                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_1);
-
-                    } else if (aqiIndex > 50 && aqiIndex <= 100) {
-                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_2);
-
-                    } else if (aqiIndex > 100 && aqiIndex <= 150) {
-                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_3);
-
-                    } else if (aqiIndex > 150 && aqiIndex <= 200) {
-                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_4);
-
-                    } else if (aqiIndex > 200 && aqiIndex <= 300) {
-                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_5);
-
-                    } else {
-                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_6);
-                    }
-                    root.setOnClickListener(onClickListener);
-                    mLinearLayout.addView(root);
-
-                }
-//
-//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UnitUtil.dip2px(50) * mAirInfoList.size());
-//                mStationListView.setLayoutParams(params);
-//                mAdapter.setList(mAirInfoList);
-                //判断一下防止请求成功但是没有数据
-                if (mAirInfoList.size() > 0) {
-                    AirInfoBean airInfoBean = mAirInfoList.get(0);
-                    reset(airInfoBean);
-                } else {
-                }
-            }
-
-            @Override
-            public void onFailed() {
-//                Toast.makeText(mActivity, "网络请求失败", Toast.LENGTH_SHORT).show();
+            public void onSuccess(Object object) {
+                airInfoBeanTest = (AirInfoBeanTest) object;
+                txtAqi1.setText(airInfoBeanTest.getTest_aqi());
             }
         });
+
+//        AirInfoBean.parseAirInfo(response, new RequestCallBack() {
+//            @Override
+//            public void onSuccess(List<?> list) {
+//                mAirInfoList = (List<AirInfoBean>) list;
+//                if (mLinearLayout.getChildCount() > 0) {
+//                    mLinearLayout.removeAllViews();
+//                }
+//
+//                //循环添加站点信息，原来用listview 与scrollview会有冲突
+//                for (int i = 0; i < mAirInfoList.size(); i++) {
+//                    LayoutInflater inflater = LayoutInflater.from(mActivity);
+//                    View root = inflater.inflate(R.layout.item_air_staion_layout, null);
+//                    TextView number = (TextView) root.findViewById(R.id.air_num);
+//                    TextView station = (TextView) root.findViewById(R.id.air_station);
+//                    TextView aqi = (TextView) root.findViewById(R.id.air_aqi);
+//                    number.setText((i+1)+ "");
+//                    if(!"null".equals(mAirInfoList.get(i).getPosition_name())){
+//                        station.setText(mAirInfoList.get(i).getPosition_name());
+//                    }else{
+//                        station.setText(mAirInfoList.get(i).getArea());
+//                    }
+//
+//                    aqi.setText(mAirInfoList.get(i).getAqi());
+//                    int aqiIndex = Integer.parseInt(mAirInfoList.get(i).getAqi().trim());
+//                    if (aqiIndex >=0 && aqiIndex <= 50) {
+//                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_1);
+//
+//                    } else if (aqiIndex > 50 && aqiIndex <= 100) {
+//                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_2);
+//
+//                    } else if (aqiIndex > 100 && aqiIndex <= 150) {
+//                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_3);
+//
+//                    } else if (aqiIndex > 150 && aqiIndex <= 200) {
+//                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_4);
+//
+//                    } else if (aqiIndex > 200 && aqiIndex <= 300) {
+//                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_5);
+//
+//                    } else {
+//                        aqi.setBackgroundResource(R.drawable.air_range_sq_bg_6);
+//                    }
+//                    root.setOnClickListener(onClickListener);
+//                    mLinearLayout.addView(root);
+//
+//                }
+////
+////                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UnitUtil.dip2px(50) * mAirInfoList.size());
+////                mStationListView.setLayoutParams(params);
+////                mAdapter.setList(mAirInfoList);
+//                //判断一下防止请求成功但是没有数据
+//                if (mAirInfoList.size() > 0) {
+//                    AirInfoBean airInfoBean = mAirInfoList.get(0);
+//                    reset(airInfoBean);
+//                } else {
+//                }
+//            }
+//
+//            @Override
+//            public void onFailed() {
+////                Toast.makeText(mActivity, "网络请求失败", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            for (int i=0;i<mAirInfoList.size();i++){
-                if (v==mLinearLayout.getChildAt(i)){
-                    AirInfoBean airInfoBean = mAirInfoList.get(i);
-                    reset(airInfoBean);
-                    mScrollView.fullScroll(ScrollView.FOCUS_UP);
-                }
-            }
-        }
-    };
+//    private View.OnClickListener onClickListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                if (v==mLinearLayout.getChildAt(i)){
+//                    AirInfoBean airInfoBean = mAirInfoList.get(i);
+//                    reset(airInfoBean);
+//                    mScrollView.fullScroll(ScrollView.FOCUS_UP);
+//                }
+//            }
+//        }
+//    };
 
 
     //初始化popupWindow
@@ -341,7 +356,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         aqi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_AQI);
+                //resetStationList(S_AQI);
                 mPopupWindow.dismiss();
             }
         });
@@ -349,7 +364,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         pm25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_PM25);
+                //resetStationList(S_PM25);
                 mPopupWindow.dismiss();
             }
         });
@@ -357,7 +372,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         pm10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_PM10);
+                //resetStationList(S_PM10);
                 mPopupWindow.dismiss();
             }
         });
@@ -365,7 +380,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         o3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_O3);
+                //resetStationList(S_O3);
                 mPopupWindow.dismiss();
             }
         });
@@ -373,7 +388,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         so2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_SO2);
+                //resetStationList(S_SO2);
                 mPopupWindow.dismiss();
             }
         });
@@ -381,7 +396,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         no2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_NO2);
+               // resetStationList(S_NO2);
                 mPopupWindow.dismiss();
             }
         });
@@ -389,7 +404,7 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         co.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetStationList(S_CO);
+                //resetStationList(S_CO);
                 mPopupWindow.dismiss();
             }
         });
@@ -404,58 +419,58 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         mPopupWindow.showAsDropDown(mPollutionText);
 
     }
-    private void resetStationList(String pNname){
-        if (pNname.equals(S_AQI)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getAqi());
-                mPollutionText.setText("AQI");
-            }
-        }else if (pNname.equals(S_PM25)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getPm25());
-                mPollutionText.setText("PM2.5");
-            }
-        }else if (pNname.equals(S_PM10)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getPm10());
-                mPollutionText.setText("PM10");
-            }
-        }else if (pNname.equals(S_O3)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getO3());
-                mPollutionText.setText("03");
-            }
-        }else if (pNname.equals(S_SO2)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getSo2());
-                mPollutionText.setText("SO2");
-            }
-        }else if (pNname.equals(S_NO2)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getNo2());
-                mPollutionText.setText("NO2");
-            }
-        }else if (pNname.equals(S_CO)){
-            for (int i=0;i<mAirInfoList.size();i++){
-                View rootView = mLinearLayout.getChildAt(i);
-                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
-                tv.setText(mAirInfoList.get(i).getCo());
-                mPollutionText.setText("CO");
-            }
-        }
-    }
+//    private void resetStationList(String pNname){
+//        if (pNname.equals(S_AQI)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getAqi());
+//                mPollutionText.setText("AQI");
+//            }
+//        }else if (pNname.equals(S_PM25)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getPm25());
+//                mPollutionText.setText("PM2.5");
+//            }
+//        }else if (pNname.equals(S_PM10)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getPm10());
+//                mPollutionText.setText("PM10");
+//            }
+//        }else if (pNname.equals(S_O3)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getO3());
+//                mPollutionText.setText("03");
+//            }
+//        }else if (pNname.equals(S_SO2)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getSo2());
+//                mPollutionText.setText("SO2");
+//            }
+//        }else if (pNname.equals(S_NO2)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getNo2());
+//                mPollutionText.setText("NO2");
+//            }
+//        }else if (pNname.equals(S_CO)){
+//            for (int i=0;i<mAirInfoList.size();i++){
+//                View rootView = mLinearLayout.getChildAt(i);
+//                TextView tv = (TextView) rootView.findViewById(R.id.air_aqi);
+//                tv.setText(mAirInfoList.get(i).getCo());
+//                mPollutionText.setText("CO");
+//            }
+//        }
+//    }
 
     /**
      * 设置数据
@@ -466,6 +481,58 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         resetAirIndex(airInfoBean.getAqi(), airInfoBean.getDateTime(), airInfoBean.getHourTime(), airInfoBean.getQuality(), airInfoBean.getPrimaryPollutant(),
                 airInfoBean.getPm10(), airInfoBean.getPm25(), airInfoBean.getSo2(), airInfoBean.getNo2()
                 , airInfoBean.getCo(), airInfoBean.getO3(), airInfoBean.getAdvice(), airInfoBean.getPosition_name());
+    }
+    private  void  reset_test(AirInfoBeanTest air){
+        resetAirIndes_test(air.getTest_aqi(),air.getTest_date(),air.getTest_time(),air.getTest_quality());
+    }
+    private void resetAirIndes_test(String aqi,String date,String time,String rank){
+        txtAqi1.setText(aqi);
+        txtAqi2.setText(aqi);
+        int aqiIndex = Integer.parseInt(aqi);
+        txtDate.setText(date);
+        String releaseTime=time.replaceAll("[T]", " ");
+        releaseTime=releaseTime.replaceAll("[Z]", " ");
+        txtTime.setText(releaseTime + " 发布");
+
+        if (aqiIndex >= 0 && aqiIndex <= 50) {
+            txtAqiLevel1.setBackgroundResource(R.drawable.air_range_sq_bg_1);
+            airRankBg.setBackgroundResource(R.drawable.air_range_bg_1);
+            //sendBroadCastReceiver(1);
+            mScrollView.setBackgroundResource(R.mipmap.home_bg);
+            mLevelt =1;
+        } else if (aqiIndex > 50 && aqiIndex <= 100) {
+            txtAqiLevel1.setBackgroundResource(R.drawable.air_range_sq_bg_2);
+            airRankBg.setBackgroundResource(R.drawable.air_range_bg_2);
+            // sendBroadCastReceiver(2);
+            mScrollView.setBackgroundResource(R.mipmap.home_bg2);
+            mLevelt =2;
+        } else if (aqiIndex > 100 && aqiIndex <= 150) {
+            txtAqiLevel1.setBackgroundResource(R.drawable.air_range_sq_bg_3);
+            airRankBg.setBackgroundResource(R.drawable.air_range_bg_3);
+            mScrollView.setBackgroundResource(R.mipmap.home_bg3);
+            // sendBroadCastReceiver(3);
+            mLevelt =3;
+        } else if (aqiIndex > 150 && aqiIndex <= 200) {
+            txtAqiLevel1.setBackgroundResource(R.drawable.air_range_sq_bg_4);
+            airRankBg.setBackgroundResource(R.drawable.air_range_bg_4);
+            mScrollView.setBackgroundResource(R.mipmap.home_bg4);
+            // sendBroadCastReceiver(4);
+            mLevelt =4;
+        } else if (aqiIndex > 200 && aqiIndex <= 300) {
+            txtAqiLevel1.setBackgroundResource(R.drawable.air_range_sq_bg_5);
+            airRankBg.setBackgroundResource(R.drawable.air_range_bg_5);
+            mScrollView.setBackgroundResource(R.mipmap.home_bg5);
+            //  sendBroadCastReceiver(5);
+            mLevelt =5;
+        } else {
+            txtAqiLevel1.setBackgroundResource(R.drawable.air_range_sq_bg_6);
+            airRankBg.setBackgroundResource(R.drawable.air_range_bg_6);
+            mScrollView.setBackgroundResource(R.mipmap.home_bg6);
+            //  sendBroadCastReceiver(6);
+            mLevelt =6;
+        }
+        txtAqiLevel1.setText(rank);
+        txtAqiLevel2.setText(rank);
     }
 
     //设置数据
@@ -524,7 +591,8 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
         txtNO2.setText(no2 + "μg/m³");
         txtCO.setText(co + "mg/m³");
         txtO3.setText(o3 + "μg/m³");
-        txtAdvice.setText(advice);
+        //airInfoBeanTest.getTest_advice()
+        txtAdvice.setText(airInfoBeanTest.getTest_advice());
         if(!"null".equals(station)){
             txtStation.setText(station);
         }else{
@@ -535,7 +603,8 @@ public class HomeInfoAirFragment extends BaseFragment implements AdapterView.OnI
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        reset(mAirInfoList.get(position));
+       // reset(mAirInfoList.get(position));
+        reset_test(airInfoBeanTest);
         mScrollView.fullScroll(ScrollView.FOCUS_UP);
     }
 

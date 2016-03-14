@@ -82,12 +82,12 @@ public class HomeInfoFragment extends BaseFragment {
         if (bundle != null) {
             if (mCityList.size() > 0) {
               //  cityName = mCityList.get(bundle.getInt(CITY_NAME)).getCity();
-                cityName = "无锡市";
+                cityName = "wuxi";
                 cityPinYin=mCityList.get(bundle.getInt(CITY_NAME)).getCityPinYin();
 
             }else{
               //  cityName=bundle.getString(CITY_NAME);
-                cityName = "无锡市";
+                cityName = "wuxi";
                 cityPinYin=bundle.getString(CITY_PINYIN);
             }
     }

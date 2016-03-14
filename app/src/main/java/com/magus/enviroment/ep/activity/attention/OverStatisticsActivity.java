@@ -16,6 +16,8 @@ import com.magus.enviroment.R;
 import com.magus.enviroment.ep.fragment.attention.PreviewBarChartFragement;
 import com.magus.enviroment.ep.fragment.attention.PreviewDiagramFragment;
 import com.magus.enviroment.ep.fragment.attention.PreviewLineChartFragment;
+import com.magus.enviroment.ep.fragment.attention.ui.PreviewTabDayFragmeng;
+import com.magus.enviroment.ep.fragment.attention.ui.PreviewTabMonthFragmeng;
 import com.magus.enviroment.ui.CustomActionBar;
 import com.magus.magusutils.DateUtil;
 import java.util.ArrayList;
@@ -33,6 +35,9 @@ public class OverStatisticsActivity extends FragmentActivity {
     private PreviewBarChartFragement mChartFragment;//柱状图
     private PreviewDiagramFragment mDiagramFragment;//表格
     private PreviewLineChartFragment mLineFrgment;//折线图
+
+    private PreviewTabMonthFragmeng mTabFrgment;
+    private PreviewTabDayFragmeng mTabDayFrgment;
 
     private static final int ID_CHART_FRAGMENT = 0;
     private static final int ID_DIAGRAM_FRAGMENT = 1;
@@ -59,7 +64,9 @@ public class OverStatisticsActivity extends FragmentActivity {
         setContentView(R.layout.activity_overview_statistics);
         initActionBar();
         init();
-        initTopFragment();
+        initTabFragment();
+        //initTopFragment();
+        initTabdayFragment();
         initLineChar();
     }
 
@@ -97,6 +104,23 @@ public class OverStatisticsActivity extends FragmentActivity {
         mChartFragment = new PreviewBarChartFragement();
         transaction.replace(R.id.chart_content, mChartFragment);
         transaction.commitAllowingStateLoss();
+    }
+
+    //初始化表格数据
+    private void initTabFragment(){
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        mTabFrgment = new PreviewTabMonthFragmeng();
+        transaction.replace(R.id.chart_content, mTabFrgment);
+        transaction.commitAllowingStateLoss();
+
+    }
+    //初始化表格数据
+    private void initTabdayFragment(){
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        mTabDayFrgment = new PreviewTabDayFragmeng();
+        transaction.replace(R.id.tabday_content, mTabDayFrgment);
+        transaction.commitAllowingStateLoss();
+
     }
 
 

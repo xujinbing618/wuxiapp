@@ -11,7 +11,8 @@ public class URLConstant {
      * url头
      */
     public static String FILE_NAME = "/ep4.1_phoneapp";//erc
-    public static String HEAD_URL = SharedPreferenceUtil.get("head_url", "http://103.44.145.243:10782");
+    public static String HEAD_URL = SharedPreferenceUtil.get("head_url", "http://192.168.5.172:8080");
+    public static String TEST_URL = "http://192.168.5.173:8080/sepms/indexAction!getIndexInfos.action";
     /**
      * 请求空气质量URLEncoder.encode("'呼和浩特'", "utf-8");
      */

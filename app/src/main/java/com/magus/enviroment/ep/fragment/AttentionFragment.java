@@ -72,7 +72,7 @@ public class AttentionFragment extends BaseFragment {
                     if ("true".equals(SharedPreferenceUtil.get("gn_0001", "false"))) {
                         startNewActivity(OverStatisticsActivity.class);
                     } else {
-
+                        startNewActivity(OverStatisticsActivity.class);
                         Toast.makeText(getActivity(), "对不起，您没有权限", Toast.LENGTH_SHORT).show();
                     }
                     break;
